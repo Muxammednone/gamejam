@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public int _hp;
     public float speed;
-   
+    public bool isSlowed;
 
     public void GetDamage(int damage)
     {

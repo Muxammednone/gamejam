@@ -1,16 +1,33 @@
 using UnityEngine;
-
-public class SlowTower : MonoBehaviour
+using System.Collections;
+public class SlowTower : Tower
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public float normalSpeed = 5.0f;       
+    public float slowedSpeed = 2.0f;     
+    public float slowDuration;
+       
+    public override void shootEnemy(Enemy enemy)
     {
-        
+        base.shootEnemy(enemy);
+        SlowDown(slowDuration, enemy);
+
+    }
+    public void SlowDown(float duration, Enemy enemy)
+    {
+        if (!enemy.isSlowed) // ѕровер€ем, не наложено ли замедление уже
+        {
+            StartCoroutine(SlowdownCoroutine(duration, enemy));
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator SlowdownCoroutine(float duration, Enemy enemy)
     {
-        
+        enemy.isSlowed = true;
+        enemy.speed = slowedSpeed;       
+
+        yield return new WaitForSeconds(duration);
+
+        enemy.speed = normalSpeed;     
+        enemy.isSlowed = false;
     }
 }

@@ -61,7 +61,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c900be68510bca34d8b69dcc560ad6ba, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -230321049008426911}
+      addedObject: {fileID: 8437490328959078962}
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: c900be68510bca34d8b69dcc560ad6ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3430918085340052113}
@@ -71,7 +71,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c900be68510bca34d8b69dcc560ad6ba, type: 3}
   m_PrefabInstance: {fileID: 981788028264403565}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-230321049008426911
+--- !u!114 &8437490328959078962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,13 +80,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 99478123017629500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52ad6d5cba731034aac92f12ca8f1f3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 78ebb58c9b0761e41b8a371053220542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 100
   price: 0
-  hitTime: 3
+  hitTime: 5
   mainTowerTransform: {fileID: 1492703218498915405, guid: effc6953b60796b4da9f886272f61b5a, type: 3}
+  exploadRadius: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &732602948115445126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c900be68510bca34d8b69dcc560ad6ba, type: 3}

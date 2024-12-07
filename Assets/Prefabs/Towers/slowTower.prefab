@@ -131,7 +131,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 78e4a98be1b963e4995a3e31b9276061, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -3491401434168568691}
+      addedObject: {fileID: 4599510290354807709}
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 78e4a98be1b963e4995a3e31b9276061, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3783515520819363358}
@@ -172,7 +172,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 78e4a98be1b963e4995a3e31b9276061, type: 3}
   m_PrefabInstance: {fileID: 6945791375676278825}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-3491401434168568691
+--- !u!114 &4599510290354807709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,10 +181,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7828665336695436664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52ad6d5cba731034aac92f12ca8f1f3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bb43e59e076cfa489e95f95b5d1dcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
   price: 0
   hitTime: 3
   mainTowerTransform: {fileID: 1492703218498915405, guid: effc6953b60796b4da9f886272f61b5a, type: 3}
+  normalSpeed: 5
+  slowedSpeed: 2
+  slowDuration: 3
