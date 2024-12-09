@@ -12,6 +12,7 @@ public class RoketTower : Tower
     {
         //base.shootEnemy(enemy);
         List<Enemy> enemy_list = getExploadedEnemies(enemy);
+        GetComponentInChildren<RoketSpawner>().SpawnRocket(enemy.transform);
         foreach (Enemy enem in enemy_list)
         {
             enem.GetDamage(damage);

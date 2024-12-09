@@ -8,6 +8,7 @@ public class SetupManager : MonoBehaviour
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private GameObject[] _visuals;
     [SerializeField] private Tower[] _towers;
+    [SerializeField] private Lunohod[] _lunohods;
     public LayerMask layerMask;
     public int setuppingIndex;
 
@@ -20,9 +21,19 @@ public class SetupManager : MonoBehaviour
     private GameObject visual = null;
     private void Setup(Vector3 point, int setup_index)
     {
-        Instantiate(_towers[setuppingIndex], new Vector3(point.x, -0.05f, point.z), Quaternion.identity);
-        Destroy(visual);
-        _gameManager.isSetupping = false;
+        if (setup_index < 3)
+        {
+            Instantiate(_towers[setuppingIndex], new Vector3(point.x, -0.05f, point.z), Quaternion.identity);
+            Destroy(visual);
+            _gameManager.isSetupping = false;
+        }
+        else
+        {
+            Instantiate(_lunohods[setuppingIndex-3], new Vector3(point.x, -0.05f, point.z), Quaternion.identity);
+            Destroy(visual);
+            _gameManager.isSetupping = false;
+        }
+       
     }
     private void makeVisual(Vector3 point)
     {
@@ -30,7 +41,6 @@ public class SetupManager : MonoBehaviour
         {
             visual = Instantiate(_visuals[setuppingIndex], new Vector3(point.x, -0.05f, point.z), Quaternion.identity);
         }
-        
     }
     private void paintVisual(bool flag)
     {
@@ -54,15 +64,31 @@ public class SetupManager : MonoBehaviour
     }
     private bool CheckForSetup(GameObject visual)
     {
-        
-        Collider[] coliders = Physics.OverlapBox(visual.transform.position, new Vector3(0.95f, 1, 0.95f), Quaternion.identity, layerMask);
-        foreach (Collider col in coliders) 
+        if (setuppingIndex < 3)
         {
-            if (!col.gameObject.GetComponent<DetectEnemy>())
+            Collider[] coliders = Physics.OverlapBox(visual.transform.position, new Vector3(0.95f, 1, 0.95f), Quaternion.identity, layerMask);
+            foreach (Collider col in coliders)
             {
-                if (col.gameObject.transform.parent.gameObject.tag != "setup_tile") return false;
+                if (!col.gameObject.GetComponent<DetectEnemy>())
+                {
+                    if (col.gameObject.transform.parent.gameObject.tag != "setup_tile") return false;
+                }
+
             }
-            
+            return true;
+        }
+        else
+        {
+            Collider[] coliders = Physics.OverlapBox(visual.transform.position, new Vector3(0.7f, 1, 0.7f), Quaternion.identity, layerMask);
+            foreach (Collider col in coliders)
+            {
+                if (!col.gameObject.GetComponent<DetectEnemy>())
+                {
+                    if (col.gameObject.transform.parent.gameObject.tag != "lunohod_tile") return false;
+                }
+
+            }
+            return true;
         }
         return true;
     }

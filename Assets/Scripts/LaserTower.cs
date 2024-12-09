@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class LaserTower : Tower
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Transform gunTransfrom;
+    public override void shootEnemy(Enemy enemy)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GetComponentInChildren<RoketSpawner>().SpawnRocket(enemy.transform);
+        base.shootEnemy(enemy);
+        gunTransfrom.LookAt(enemy.transform);
     }
 }

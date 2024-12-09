@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8131179760275358827}
+  - component: {fileID: 7377176546306849086}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -24,14 +25,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024657107216710659}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.6872297, w: 0.7264402}
   m_LocalPosition: {x: 35.383, y: 0.437, z: -31.315}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3346334700440855506}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -86.822}
+--- !u!114 &7377176546306849086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024657107216710659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce7c7c1895e7c040867217544f615b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitDistance: 0.1
 --- !u!1001 &3024774987810227257
 PrefabInstance:
   m_ObjectHideFlags: 0

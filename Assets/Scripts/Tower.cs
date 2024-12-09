@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     public int damage;
-    public int price;
+    public static int price;
     public float hitTime;
     public Transform mainTowerTransform;
     private Enemy targetEnemy;

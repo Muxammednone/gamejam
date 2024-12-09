@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fb835e9535a319746b75849726fb9ca5, type: 3}
       propertyPath: m_TagString
-      value: lunohod_tile
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: fb835e9535a319746b75849726fb9ca5, type: 3}
       propertyPath: m_Layer
